@@ -54,11 +54,7 @@
     </button>
   </div>
 <% end %>
-In the config/initializers/devise.rb file uncomment the line that says config.mailer = 'Devise::Mailer'
-then uncomment the line config.allow_unconfirmed_access_for = 2.days, then change the 2.days to 0.days
-then uncomment the line config.confirm_within = 3.days
-then uncomment the line config.confirmation_keys = [:email]
-In the app/views/layouts/application.html.erb within the <ul class="nav navbar-nav"> add in the following code to invite new members:
+<ul class="nav navbar-nav">
 <% if current_user %>
   <li>
     <%= link_to "<i class='fa fa-users'></i> Add Members".html_safe,
