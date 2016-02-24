@@ -29,4 +29,9 @@ module ApplicationHelper
     flash_messages.join("\n").html_safe
   end
   ##bootstrap flash helper ends here, copies from:https://github.com/seyhunak/twitter-bootstrap-rails/blob/master/app/helpers/bootstrap_flash_helper.rb
+  
+  ## helper method for tenant name
+  def tenant_name(tenant_id)
+    Tenant.find(tenant_id).name
+  end
 end
