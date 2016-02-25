@@ -8,7 +8,7 @@ ActionMailer::Base.smtp_settings = {
 
   :address => 'smtp.sendgrid.net',
   
-  :port => '2587',
+  :port => '587',
   
   :authentication => :plain,
   
