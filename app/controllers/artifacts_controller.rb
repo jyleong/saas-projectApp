@@ -33,6 +33,7 @@ class ArtifactsController < ApplicationController
                       notice: 'Artifact was successfully created.' }
         format.json { render :show, status: :created, location: @artifact }
       else
+        puts "Something went wrong"
         format.html { render :new }
         format.json { render json: @artifact.errors, status: :unprocessable_entity }
       end
