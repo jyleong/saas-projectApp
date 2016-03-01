@@ -12,7 +12,7 @@ class Project < ActiveRecord::Base
     end
   end
   
-  def self.by_user_plan_and_tenant(tenant_id)
+  def self.by_user_plan_and_tenant(tenant_id,user)
     tenant = Tenant.find(tenant_id)
     if tenant.plan == "premium"
       if user.is_admin?
