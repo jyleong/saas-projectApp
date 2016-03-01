@@ -3,9 +3,9 @@ class Tenant < ActiveRecord::Base
    acts_as_universal_and_determines_tenant
   has_many :members, dependent: :destroy
   has_many :projects, dependent: :destroy ## if tenant is destroyed, destroy all its stuff cascading destroy
-  has_one :payments
+  has_one :payment
   ##accepts nested form os payment
-  accepts_nested_attributes_for :payments
+  accepts_nested_attributes_for :payment
   
   def can_create_projects?
     (plan =='free' && projects.count < 1) || (plan == 'premium')
