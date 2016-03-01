@@ -12,7 +12,7 @@ class TenantsController < ApplicationController
           if @tenant.plan == 'premium' && @tenant.payment.blank?
             
             @payment = Payment.new({email: tenant_params["email"],
-              tokens: params[:payment]["token"],
+              token: params[:payment]["token"],
               tenant: @tenant})
             
             begin
